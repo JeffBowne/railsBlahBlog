@@ -2,7 +2,7 @@
 <p>Find me in app/views/posts/edit.html.erb</p>
 
 
-<%= form_for @post do |f| %>
+<%= form_for @post html: { class:'editpost' } do |f| %>
   <%=f.label :"Edit Post" %>
   <%=f.text_field :title, :placeholder => "New Title" %>
   <%=f.text_area :content, :placeholder => "New Content" %>
