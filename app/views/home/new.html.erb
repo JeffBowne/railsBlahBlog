@@ -1,0 +1,9 @@
+<h1>Home#new</h1>
+
+
+<%= form_tag home_path do %>
+  <%=label_tag :"Log In" %>
+  <%=text_field_tag :username, :placeholder => "Your username" %>
+  <%=text_feild_tag :password, :placeholder => "Your password" %>
+  <%=submit_tag :"Log in" %>
+<% end %>

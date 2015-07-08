@@ -1,0 +1,9 @@
+<h1>Posts#new</h1>
+
+
+<%= form_for @post do |f| %>
+  <%=f.label :"New Post" %>
+  <%=f.text_field :title, :placeholder => "Title" %>
+  <%=f.text_area :content, :placeholder => "Content" %>
+  <%=f.submit :"Post It" %>
+<% end %>

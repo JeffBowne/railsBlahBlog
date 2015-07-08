@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HOME</title>
+		<!-- <link rel="stylesheet" type="text/css" href=".css"> -->
+		<!-- // <script src='http://code.jquery.com/jquery-2.1.4.js'></script> -->
+		<!-- // <script src='.js'></script> -->
+		<meta charset="UTF-8">
+	</head>
+	<body>
+
+		<div>
+			NOPE
+		</div>
+		
+		<h1><%= @post.title %></h1>
+		<p><%= @post.content %></p>
+
+		<%= link_to "Edit this Post", edit_post_path %>
+		<%= link_to "Delete this Post", @post, :method => :delete %>
+
+
+	</body>
+</html>

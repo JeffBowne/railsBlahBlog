@@ -1,0 +1,14 @@
+<h2>My form here....</h2>
+<% @sample.each do |something | %>
+  <h4><%= something %></h4>
+<% end %>
+
+<h1>Home#login</h1>
+
+
+<%= form_tag url: "/login", method:"post" do %>
+  <%=label_tag :"Log In" %>
+  <%=text_field_tag :username, params[:username] %>
+  <%=password_field_tag :password %>
+  <%=submit_tag :"Log in" %>
+<% end %>
