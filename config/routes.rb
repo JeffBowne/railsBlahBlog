@@ -31,6 +31,7 @@ Rails.application.routes.draw do
 
 get '/login' => 'home#login'
 post '/login' => 'home#login_process'
+get '/logout' => 'home#logout'
 
   resources :users
   resources :profiles

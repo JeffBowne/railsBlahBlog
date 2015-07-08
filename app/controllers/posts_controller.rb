@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.create(params[:post])
     redirect_to '/'
   end
 
@@ -22,7 +22,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update_attributes(post_params)
+    @post.update_attributes(params[:post])
     redirect_to '/'
   end
 
