@@ -31,17 +31,23 @@
 
 
 		<div class='contentbox'>	
+
 				<% @post.reverse.each do |x| %>
 			<div class='posttitles'><%= link_to x.title, x %> <span><%= x.created_at %></span></div>
 			<p class='postprev'><%= truncate(x.content, length: 400, omission: '... (continued)') %></p>
 				<% end %>
 		</div>
 
+
+
 		<div class='userlist'>
-			<div><strong>blah</strong>.BLAH.<strong>blog</strong>.<span>users :</span></div>
-				<% @list.each do |user| %>
-			<a href="/users/<%=user.id %>/profiles/<%=user.id %>"><%= user.username %></a>
-				<% end %>
+			<div><strong>blah</strong>.BLAH.<strong>blog</strong>.<span>users :</span>
+			</div>
+			<ul>
+					<% @list.each do |user| %>
+				<li><%= link_to user.username, '/profile' %></li>
+					<% end %>
+			<ul>
 		</div>
 
 	</body>
