@@ -24,28 +24,28 @@
 			</div>
 
 
+					<% if @user != "Not logged in" %>
 
 		<%= link_to "POST YOUR BLOG", new_post_path, class: 'makebutton' %>
+					<% end %>
 
 
 		<div class='contentbox'>	
 
 
-			<% @post.each do |x| %>
+			<% @post.reverse.each do |x| %>
 		<div class='posttitles'><%= link_to x.title, x %> <span><%= x.created_at %></span></div>
 		<p class='postprev'><%= truncate(x.content, length: 100, omission: '... (continued)') %></p>
 			<% end %> 
 		<div>
-		<% @post.reverse.each do |x| %>
-				<p><%= link_to x.title, x %><%= x.created_at %></p>
-		<% end %> 
 
-
-		<br />
-		<br />
-		<br />
-
-		<%= link_to "My Profile", '/profile' %>
+			<div class='userlist'>
+				<div><strong>blah</strong>.BLAH<strong>blog</strong><span>users :</span></div>
+						<% @list.each do |user| %>
+					<a href="/users/<%=user.id %>/profiles/<%=user.id %>"><%= user.username %></a>
+						<% end %>
+				
+			</div>
 
 	</body>
 </html>
