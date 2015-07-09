@@ -25,9 +25,17 @@
 		<%= link_to "Make a Post", new_post_path %> <br>
 
 
-			<% @post.reverse.each do |x| %>
-		<p><%= link_to x.title, x %><%= x.created_at %></p>
-			<% end %> 
+		<% @post.reverse.each do |x| %>
+				<p><%= link_to x.title, x %><%= x.created_at %></p>
+		<% end %> 
+
+
+		<br />
+		<br />
+		<br />
+
+		<%= link_to "My Profile", '/profile' %>
+
 
 	</body>
 </html>

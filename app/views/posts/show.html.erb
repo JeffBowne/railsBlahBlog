@@ -11,6 +11,7 @@
 
 		<div>
 			NOPE
+			<%= link_to "Back to Index", '/' %>
 		</div>
 		
 		<h1><%= @post.title %></h1>
@@ -26,9 +27,12 @@
 		  <%=f.submit :"Post It" %>
 		<% end %>
 
-		<% @post.comments.each do |x| %>
-		<%= x.content %>
+		<% @post.comments.reverse[1..(@post.comments.length)].each do |x| %>
+		<ul>
+			<li><%= x.content %></li>
+		</ul>
 		<% end %>
+
 
 
 	</body>
