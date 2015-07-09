@@ -45,6 +45,7 @@ post '/new_profile' => 'profiles#create'
   resources :users do 
     resources :profiles
   end
+  
   resources :posts do 
     resources :comments
   end
