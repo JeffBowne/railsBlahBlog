@@ -20,5 +20,16 @@
 		<%= link_to "Delete this Post", @post, :method => :delete %>
 
 
+		<%= form_for ([@post, @post.comments.build]), html: { class:'newcomment' } do |f| %>
+		  <%=f.label :"New Comment" %><br />
+		  <%=f.text_area :content, :placeholder => "Content" %>
+		  <%=f.submit :"Post It" %>
+		<% end %>
+
+		<% @post.comments.each do |f| %>
+		<%= f.content %>
+		<% end %>
+
+
 	</body>
 </html>

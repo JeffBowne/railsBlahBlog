@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   
 
+  # get 'comments/new'
+
+  # get 'comments/create'
+
+  # get 'comments/destroy'
+
   # get 'users/index'
 
   # get 'users/show'
@@ -35,8 +41,9 @@ get '/logout' => 'home#logout'
 
   resources :users
   resources :profiles
-  resources :posts
-  resources :comments
+  resources :posts do 
+    resources :comments
+  end
 
 
   # get 'home/index'
