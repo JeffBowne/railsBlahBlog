@@ -5,7 +5,9 @@ class ProfilesController < ApplicationController
   def show
     @user = User.find(session[:user_id])
     @profile = Profile.create(params[:profile])
+  end
 
+  def other
   end
 
   def new
@@ -16,12 +18,6 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(params[:new_profile])
     @profile.user_id = @user.id
     @profile.save
-    redirect_to '/profile'
-  end
-
-  def others
-    @user = User.find_by_username(params[:username])
-    
     redirect_to '/profile'
   end
 
