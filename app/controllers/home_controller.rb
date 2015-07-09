@@ -10,6 +10,7 @@ class HomeController < ApplicationController
     end
 
     @post =  Post.all
+    @list = User.all
   end
 
   def login
