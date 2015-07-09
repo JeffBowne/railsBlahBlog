@@ -38,8 +38,12 @@ body {
 	font-family: "Arial Narrow", sans-serif;
 	color: black;
 	font-size: 55px;
+	transition-duration: .3s;
 }
+.title:hover {
+    text-shadow: 0px 0px 10px white;
 
+}
 
 .corner {
 	position: absolute;
@@ -62,7 +66,7 @@ body {
 	margin: 20px 5px 5px 5px;
 	padding: 5px;
 	text-decoration: none;
-			transition-duration: .3s;
+	transition-duration: .3s;
 }
 
 .boxes:hover {
@@ -107,12 +111,11 @@ body {
 }
 
 
-/*----------------------------------- CONTENT -----------------------------------*/
+/*--------------------- CONTENT ---------------------*/
 
 
 .contentbox {
 	float: left;
-	height: 600px;
 	width: 60%;
 	margin-top: 40px;
 	margin-left: 70px;
@@ -123,6 +126,7 @@ body {
 
 
 .posttitles {
+	font-size: 18px;
 	font-weight: bold;
 	background-color: #E6E6E6;
 	margin-bottom: 0px;
@@ -138,7 +142,14 @@ body {
 .posttitles a:hover {
 	text-decoration: underline;
 }
-.posttitles span {
+.postby {
+	background-color: #E6E6E6;
+	margin-bottom: 0px;
+	margin-top: 1px;
+	padding: 2px 2px 2px 20px;
+	font-size: 12px;
+}
+.postby span {
 	float: right;
 	margin-right: 20px;
 	font-weight: lighter;
@@ -154,9 +165,6 @@ body {
 	padding: 3px;
 	border-bottom: solid white 2px;
 }
-
-
-
 
 
 
@@ -182,6 +190,142 @@ body {
 .userlist a:hover {
 	text-decoration: underline;
 }
+
+
+
+/*----------------------------------- Posts -----------------------------------*/
+
+
+
+
+.editbutton {
+	z-index: -1;
+	position: absolute;
+	top: 70px;
+	right: 15px;
+	background-color: #E6E6E6;
+	border: solid black 4px;
+	border-radius: 0 0 0 10px;
+	width: 200px;
+	color: black;
+	text-align: center;
+	padding: 5px;
+	text-decoration: none;
+	transition-duration: .3s;
+}
+
+.editbutton:hover {
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 0 4px #FD644D;
+
+}
+.editbutton:visited {
+	color: black;
+}
+
+.editbutton:hover:visited {
+	color: black;
+}
+
+
+.deletebutton {
+	z-index: -2;
+	position: absolute;
+	top: 100px;
+	right: 30px;
+	background-color: #E6E6E6;
+	border: solid black 4px;
+	border-radius: 0 0 0 10px;
+	width: 165px;
+	color: black;
+	text-align: center;
+	padding: 5px;
+	text-decoration: none;
+	transition-duration: .3s;
+}
+
+.deletebutton:hover {
+	background-color: white;
+	color: red;
+	box-shadow: 0 0 0 4px red;
+
+}
+.deletebutton:visited {
+	color: black;
+}
+
+.deletebutton:hover:visited {
+	color: red;
+}
+
+
+
+
+.showtitle {
+	margin: 20px 0 -6px 0;
+}
+.showby {
+		border-top: solid grey 4px;
+	text-align: right;
+	padding-left: 40px;
+	margin: 0;
+}
+.showcontent {
+	font-family: "Times New Roman", serif;
+	padding: 5px;
+}
+
+
+
+
+.commentsection {
+	float: right;
+	margin-top: 150px;
+	width: 20%;
+	text-align: left;
+	border-top: solid black 2px;
+	border-right: solid black 2px;
+}
+
+.commentsection textarea {
+	resize: none;
+	width: 95%;
+	height: 100px;
+	background-color: #E6E6E6;
+	border-radius: 0 10px 0 10px;
+}
+
+.commentsection input {
+	float: right;
+	background-color: #E6E6E6;
+	border: solid black 4px;
+	border-radius: 0 10px 0 10px;
+	width: 100px;
+	color: black;
+	text-align: center;
+	margin: 5px 5px 5px 5px;
+	padding: 5px;
+	text-decoration: none;}
+
+.commentsection h2 {
+	margin-top: 50px;
+	border-top: solid black 2px;
+
+}
+.commentsection p {
+	font-size: 10px;
+
+}
+
+
+
+
+
+
+
+
+
 
 
 

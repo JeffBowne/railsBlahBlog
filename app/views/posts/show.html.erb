@@ -8,31 +8,47 @@
 		<meta charset="UTF-8">
 	</head>
 	<body>
+		<div class="topbar"></div>
+		<a href="/"><div class="title"><strong>blah</strong>.BLAH.<strong>blog</strong></div></a>
 
-		<div>
-			NOPE
-			<%= link_to "Back to Index", '/' %>
-		</div>
+			<div class='corner'>
+					<% if @user != "Not logged in" %>
+				<%= link_to @user, '/profile', class: 'boxes' %>
+				<%= link_to "Log Out", '/logout', class: 'boxes' %>
+					<% else %>
+				<%= link_to "Sign Up", new_user_path, class: 'boxes' %>
+				<%= link_to "Log In", '/login', class: 'boxes' %>
+					<% end %>
+			</div>
 		
-		<h1><%= @post.title %></h1>
-		<p><%= @post.content %></p>
+			<% if @sessionid == @author %>
+			<%= link_to "Edit this Post", edit_post_path, class: 'editbutton' %>
+			<%= link_to "Delete this Post", @post, :method => :delete, class: 'deletebutton' %>
+			<% end %>
 
-		<%= link_to "Edit this Post", edit_post_path %>
-		<%= link_to "Delete this Post", @post, :method => :delete %>
 
+		<div class='contentbox'>
 
-		<%= form_for ([@post, @post.comments.build]), html: { class:'newcomment' } do |f| %>
-		  <%=f.label :"New Comment" %><br />
-		  <%=f.text_area :content, :placeholder => "Content" %>
-		  <%=f.submit :"Post It" %>
-		<% end %>
+			<h1 class='showtitle'><%= @post.title %></h1>
+			<p class="showby">by: <%= @postby %></p>
+			<p class='showcontent'><%= @post.content %></p>
 
-		<% @post.comments.reverse[1..(@post.comments.length)].each do |x| %>
-		<ul>
-			<li><%= x.content %></li>
-		</ul>
-		<% end %>
+			
+		</div>
+	
+		<div class='commentsection'>
+			<%= form_for ([@post, @post.comments.build]), html: { class:'newcomment' } do |f| %>
+			  <%=f.label :"Care to Comment?" %><br />
+			  <%=f.text_area :content, :placeholder => "Type Here..." %><br>
+			  <%=f.submit :"Comment" %>
+			<% end %>
 
+			<h2>Comments</h2>
+
+			<% @post.comments.reverse[1..(@post.comments.length)].each do |x| %>	
+			<p>-<br><%= x.content %></p>
+			<% end %>
+		</div>
 
 
 	</body>

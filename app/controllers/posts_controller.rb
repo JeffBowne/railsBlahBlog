@@ -4,7 +4,17 @@ class PostsController < ApplicationController
   end
 
   def show
+    if session[:user_id] != nil
+      @user  = User.find_by(id: session[:user_id]).username
+    else 
+      @user = "Not logged in"
+    end
+
     @post = Post.find(params[:id])
+
+    @sessionid = session[:user_id]
+    @author = @post.user_id
+    @postby = User.find_by(id: @author).username
   end
 
   def new

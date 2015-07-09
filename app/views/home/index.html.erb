@@ -10,8 +10,7 @@
 	<body>
 
 		<div class="topbar"></div>
-
-		<div class="title"><strong>blah</strong>.BLAH.<strong>blog</strong></div>
+		<a href="/"><div class="title"><strong>blah</strong>.BLAH.<strong>blog</strong></div></a>
 
 			<div class='corner'>
 					<% if @user != "Not logged in" %>
@@ -24,16 +23,16 @@
 			</div>
 
 
-					<% if @user != "Not logged in" %>
-
+			<% if @user != "Not logged in" %>
 		<%= link_to "POST YOUR BLOG", new_post_path, class: 'makebutton' %>
-					<% end %>
+			<% end %>
 
 
 		<div class='contentbox'>	
 
 				<% @post.reverse.each do |x| %>
-			<div class='posttitles'><%= link_to x.title, x %> <span><%= x.created_at %></span></div>
+			<div class='posttitles'><%= link_to x.title, x %></div>
+			<div class='postby'>by: <%=  User.find_by(id: x.user_id).username%><span><%= x.created_at %></span></div>
 			<p class='postprev'><%= truncate(x.content, length: 400, omission: '... (continued)') %></p>
 				<% end %>
 		</div>
