@@ -11,6 +11,7 @@
 
 		<div>
 			NOPE
+			<%= link_to "Back to Index", '/' %>
 		</div>
 		
 		<h1><%= @post.title %></h1>
@@ -18,6 +19,20 @@
 
 		<%= link_to "Edit this Post", edit_post_path %>
 		<%= link_to "Delete this Post", @post, :method => :delete %>
+
+
+		<%= form_for ([@post, @post.comments.build]), html: { class:'newcomment' } do |f| %>
+		  <%=f.label :"New Comment" %><br />
+		  <%=f.text_area :content, :placeholder => "Content" %>
+		  <%=f.submit :"Post It" %>
+		<% end %>
+
+		<% @post.comments.reverse[1..(@post.comments.length)].each do |x| %>
+		<ul>
+			<li><%= x.content %></li>
+		</ul>
+		<% end %>
+
 
 
 	</body>

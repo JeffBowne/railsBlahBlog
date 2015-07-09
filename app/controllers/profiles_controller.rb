@@ -3,12 +3,19 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    @user = User.find(session[:user_id])
+    @profile = Profile.create(params[:new_profile])
   end
 
   def new
   end
 
   def create
+    @user = User.find(session[:user_id])
+    @profile = Profile.new(params[:new_profile])
+    @profile.user_id = @user.id
+    @profile.save
+    redirect_to '/profile'
   end
 
   def edit

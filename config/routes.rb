@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   
 
+  # get 'comments/new'
+
+  # get 'comments/create'
+
+  # get 'comments/destroy'
+
   # get 'users/index'
 
   # get 'users/show'
@@ -32,11 +38,16 @@ Rails.application.routes.draw do
 get '/login' => 'home#login'
 post '/login' => 'home#login_process'
 get '/logout' => 'home#logout'
+get '/profile' => 'profiles#show'
+get '/new_profile' => 'profiles#new'
+post '/new_profile' => 'profiles#create'
 
-  resources :users
-  resources :profiles
-  resources :posts
-  resources :comments
+  resources :users do 
+    resources :profiles
+  end
+  resources :posts do 
+    resources :comments
+  end
 
 
   # get 'home/index'
