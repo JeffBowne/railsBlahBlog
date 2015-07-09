@@ -1,15 +1,4 @@
 
-User.create(username: "Jack", password_digest: "1234")
-User.create(username: "Jill", password_digest: "1234")
-User.create(username: "Jeff", password_digest: "1234")
-User.create(username: "Jake", password_digest: "1234")
-User.create(username: "Jim", password_digest: "1234")
-User.create(username: "Josh", password_digest: "1234")
-User.create(username: "John", password_digest: "1234")
-User.create(username: "Janet", password_digest: "1234")
-User.create(username: "Julie", password_digest: "1234")
-User.create(username: "Jeniffer", password_digest: "1234")
-
 Post.create(user_id: 1, title: "Hard Times Hit Detroit", content: "This year in Detroit the time is now to get on the ball and create a new economic future")
 Post.create(user_id: 2, title: "Hard Times Hit Detroit", content: "This year in Detroit the time is now to get on the ball and create a new economic future")
 Post.create(user_id: 3, title: "Hard Times Hit Detroit", content: "This year in Detroit the time is now to get on the ball and create a new economic future")

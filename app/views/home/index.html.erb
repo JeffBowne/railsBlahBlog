@@ -41,11 +41,15 @@
 
 
 		<div class='userlist'>
-			<div><strong>blah</strong>.BLAH.<strong>blog</strong>.<span>users :</span>
-			</div>
+		<div><strong>blah</strong>.BLAH.<strong>blog</strong>.<span>users :</span>
+		</div>
 			<ul>
 					<% @list.each do |user| %>
-				<li><%= link_to user.username, '/profile' %></li>
+				<li>
+					<form method="GET" action="<%= "/users/#{user.id}/profiles" %>">
+						<input type="submit" value="<%= user.username %>" />
+					</form>
+				</li>
 					<% end %>
 			<ul>
 		</div>

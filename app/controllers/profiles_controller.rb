@@ -1,10 +1,14 @@
 class ProfilesController < ApplicationController
   def index
+    @other = params[:user_id]
+    @user = User.find(session[:user_id])
+    @person = User.find_by(id: params[:user_id])
   end
 
   def show
-    @user = User.find(session[:user_id])
-    @profile = Profile.create(params[:profile])
+ #   @thisGuy = User.find_by(username: params[:username])
+ #   @profile = Profile.find_by(params[:id])
+   # @user = @profile.user
   end
 
   def other
