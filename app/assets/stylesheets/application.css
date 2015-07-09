@@ -13,3 +13,148 @@
  *= require_tree .
  *= require_self
  */
+
+
+body {
+	background-color: white;
+	font-family: "Helvetica", sans-serif;
+}
+
+.topbar {
+	background-color: tomato;
+	border-bottom: solid grey 5px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 53px;
+	z-index: -1;
+}
+
+.title {
+	position: absolute;
+	left: 55px;
+	top: 0;
+	font-family: "Arial Narrow", sans-serif;
+	color: black;
+	font-size: 55px;
+}
+
+
+.corner {
+	position: absolute;
+	right: 0;
+	top: 0;	background-color: grey;
+	height: 60px;
+	border-bottom: solid black 4px;
+	border-radius: 0 0 0 10px;
+	padding: 5px;
+}
+
+.boxes {
+	display: inline-block;
+	background-color: #E6E6E6;
+	border: solid #666666 4px;
+	border-radius: 0 10px 0 10px;
+	width: 100px;
+	color: black;
+	text-align: center;
+	margin: 20px 5px 5px 5px;
+	padding: 5px;
+	text-decoration: none;
+			transition-duration: .3s;
+}
+
+.boxes:hover {
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 0 4px #FD644D;
+}
+/*	   box-shadow: 0 0 0 4px #FD644D, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);*/
+
+.boxes:visited {
+	color: black;
+}
+
+.boxes:hover:visited {
+	color: black;
+}
+
+
+.makebutton {
+	float: right;
+	background-color: #E6E6E6;
+	border: solid black 4px;
+	border-radius: 0 0 0 10px;
+	width: 200px;
+	color: black;
+	text-align: center;
+	margin: 20px 15px 5px 5px;
+	padding: 5px;
+	text-decoration: none;
+	transition-duration: .3s;
+}
+
+.makebutton:hover {
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 0 4px #FD644D;
+
+}
+.makebutton:visited {
+	color: black;
+}
+
+.makebutton:hover:visited {
+	color: black;
+}
+
+
+/*----------------------------------- CONTENT -----------------------------------*/
+
+
+.contentbox {
+	height: 600px;
+	width: 60%;
+	margin-top: 50px;
+	margin-left: 70px;
+	border-left: solid tomato 15px;
+	padding: 50px 20px 20px 0px;
+
+}
+
+.posttitles {
+	font-weight: bold;
+	background-color: #E6E6E6;
+	margin-bottom: 0px;
+	margin-top: 15px;
+	padding: 2px 2px 2px 10px;
+	border-radius: 0 15px 0 0 ;
+}
+.posttitles span {
+	float: right;
+	margin-right: 20px;
+	font-weight: lighter;
+	font-size: 10px;
+	text-align: right;
+}
+.postprev {
+	font-family: "Times New Roman", serif;
+	font-size: .9em;
+	background-color: #E6E6E6;
+	margin-top: 1px;
+	margin-bottom: 20px;
+	padding: 3px;
+	border-bottom: solid white 2px;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -9,25 +9,32 @@
 	</head>
 	<body>
 
+		<div class="topbar"></div>
 
-		<h1>Home#index</h1>
-		
-		<% if @user != "Not logged in" %>
-			<p><%= @user %></p>
-			<%= link_to "Log Out", '/logout' %>
-		<% else %>
-			<p><%= @user %></p>
-			<%= link_to "Log In", '/login' %> <br>
-			<%= link_to "Sign Up", new_user_path %> <br>
-		<% end %>
-		
+		<div class="title"><strong>blah</strong>.BLAH.<strong>blog</strong></div>
 
-		<%= link_to "Make a Post", new_post_path %> <br>
+			<div class='corner'>
+					<% if @user != "Not logged in" %>
+				<%= link_to @user, '/profile', class: 'boxes' %>
+				<%= link_to "Log Out", '/logout', class: 'boxes' %>
+					<% else %>
+				<%= link_to "Sign Up", new_user_path, class: 'boxes' %>
+				<%= link_to "Log In", '/login', class: 'boxes' %>
+					<% end %>
+			</div>
+
+
+
+		<%= link_to "POST YOUR BLOG", new_post_path, class: 'makebutton' %>
+
+
+		<div class='contentbox'>	
 
 
 			<% @post.each do |x| %>
-		<p><%= link_to x.title, x %></p>
+		<div class='posttitles'><%= link_to x.title, x %> <span><%= x.created_at %></span></div>
+		<p class='postprev'><%= truncate(x.content, length: 100, omission: '... (continued)') %></p>
 			<% end %> 
-
+		<div>
 	</body>
 </html>
