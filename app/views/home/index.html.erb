@@ -15,7 +15,7 @@
 
 			<div class='corner'>
 					<% if @user != "Not logged in" %>
-				<%= link_to @user, '/profile', class: 'boxes' %>
+				<%= link_to @user, "/users/#{@myprofile}/profiles", class: 'boxes' %>
 				<%= link_to "Log Out", '/logout', class: 'boxes' %>
 					<% else %>
 				<%= link_to "Sign Up", new_user_path, class: 'boxes' %>

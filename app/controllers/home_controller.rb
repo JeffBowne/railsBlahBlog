@@ -4,13 +4,15 @@ class HomeController < ApplicationController
   
   def index
     if session[:user_id] != nil
-      @user  = User.find_by(id: session[:user_id]).username
+      @user = User.find_by(id: session[:user_id]).username
     else 
       @user = "Not logged in"
     end
 
     @post =  Post.all
     @list = User.all
+    @myprofile = session[:user_id]
+    @person = User.find_by(id: params[:user_id])
   end
 
   def login
