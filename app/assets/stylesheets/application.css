@@ -72,24 +72,21 @@ body {
 }
 /*	   box-shadow: 0 0 0 4px #FD644D, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);*/
 
-.boxes:visited {
-	color: black;
-}
 
-.boxes:hover:visited {
-	color: black;
-}
+
 
 
 .makebutton {
-	float: right;
+	z-index: -1;
+	position: absolute;
+	top: 70px;
+	right: 15px;
 	background-color: #E6E6E6;
 	border: solid black 4px;
 	border-radius: 0 0 0 10px;
 	width: 200px;
 	color: black;
 	text-align: center;
-	margin: 20px 15px 5px 5px;
 	padding: 5px;
 	text-decoration: none;
 	transition-duration: .3s;
@@ -114,14 +111,16 @@ body {
 
 
 .contentbox {
+	float: left;
 	height: 600px;
 	width: 60%;
-	margin-top: 50px;
+	margin-top: 40px;
 	margin-left: 70px;
 	border-left: solid tomato 15px;
 	padding: 50px 20px 20px 0px;
-
 }
+
+
 
 .posttitles {
 	font-weight: bold;
@@ -129,7 +128,15 @@ body {
 	margin-bottom: 0px;
 	margin-top: 15px;
 	padding: 2px 2px 2px 10px;
-	border-radius: 0 15px 0 0 ;
+	border-top: solid black 2px; 
+	/*border-radius: 0 15px 0 0 ;*/
+}
+.posttitles a {
+	color: black;
+	text-decoration: none;
+}
+.posttitles a:hover {
+	text-decoration: underline;
 }
 .posttitles span {
 	float: right;
@@ -143,12 +150,38 @@ body {
 	font-size: .9em;
 	background-color: #E6E6E6;
 	margin-top: 1px;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 	padding: 3px;
 	border-bottom: solid white 2px;
 }
 
 
+
+
+
+
+.userlist {
+	float: right;
+	margin-top: 150px;
+	text-align: right;
+	border-top: solid black 2px;
+	border-right: solid black 2px;
+}
+.userlist div {
+	font-size: 22px;
+	margin-bottom: 6px;
+}
+.userlist span {
+	font-size: 12px;
+}
+.userlist a {
+	display: block;
+	margin: 8px;
+	text-decoration: none;
+}
+.userlist a:hover {
+	text-decoration: underline;
+}
 
 
 
