@@ -41,11 +41,12 @@ get '/logout' => 'home#logout'
 get '/profile' => 'profiles#show'
 get '/new_profile' => 'profiles#new'
 post '/new_profile' => 'profiles#create'
+get '/otherprofile' => 'profiles#show'
 
   resources :users do 
     resources :profiles
   end
-  
+
   resources :posts do 
     resources :comments
   end

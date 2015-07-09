@@ -41,10 +41,11 @@
 
 			<div class='userlist'>
 				<div><strong>blah</strong>.BLAH<strong>blog</strong><span>users :</span></div>
-						<% @list.each do |user| %>
-					<a href="/users/<%=user.id %>/profiles/<%=user.id %>"><%= user.username %></a>
-						<% end %>
-				
+				<% @list.each do |user| %>
+					<ul>
+						<li><%= link_to user.username, '/profile' %></li>
+					</ul>
+				<% end %>
 			</div>
 
 	</body>
