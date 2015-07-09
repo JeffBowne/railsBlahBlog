@@ -41,7 +41,7 @@ get '/logout' => 'home#logout'
 get '/profile' => 'profiles#show'
 get '/new_profile' => 'profiles#new'
 post '/new_profile' => 'profiles#create'
-get '/otherprofile' => 'profiles#show'
+get '/others' => 'profile#others'
 
   resources :users do 
     resources :profiles
