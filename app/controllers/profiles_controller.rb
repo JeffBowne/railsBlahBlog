@@ -3,6 +3,8 @@ class ProfilesController < ApplicationController
     @other = params[:user_id]
     @user = User.find(session[:user_id])
     @person = User.find_by(id: params[:user_id])
+    @post ||= @person.posts
+    @profile = Profile.find_by(params[:id])
   end
 
   def show

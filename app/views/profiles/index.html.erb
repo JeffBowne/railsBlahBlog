@@ -1,27 +1,126 @@
-<h1>Profiles#index</h1>
+<body>
+	<div class="topbar"></div>
+			<a href="/"><div class="title"><strong>blah</strong>.BLAH.<strong>blog</strong></div></a>
 
+	<div class='corner'>
+		<% if @user != "Not logged in" %>
+			<%= link_to @user.username, "/users/#{@myprofile}/profiles", class: 'boxes' %>
+			<%= link_to "Log Out", '/logout', class: 'boxes' %>
+		<% else %>
+			<%= link_to "Sign Up", new_user_path, class: 'boxes' %>
+			<%= link_to "Log In", '/login', class: 'boxes' %>
+		<% end %>
+	</div>
 
 	<%if @user.id == @other.to_i %>
 		<% if @user.profile != nil %>	 <!-- Logged in person looking at their own profile && they have a profile -->
-			<p><%= @user.profile.name %></p>
-			<p><%= @user.profile.email %></p>
-			<p><%= @user.profile.city %></p>
-			<%= @person %>
+			
+			<div id="leftSide">
+			</div>
+
+			<div id="rightSide">
+				<div id="picSpot"><%= image_tag @profile.image.url(:medium) %></div>
+				<div id="nameWrap">
+					<div id="nameMe">
+						<h2><%= @person.profile.name.capitalize %></h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco.  
+						</p> 
+					</div>
+					<div id="medals">
+						<ul>
+							<li>
+								<h5>Posts</h5>
+								<h2>12</h2>
+							</li>
+							<li>
+								<h5>Friends</h5>
+								<h2>212</h2>
+							</li>
+							<li>
+								<h5>Followers</h5>
+								<h2>121</h2>
+							</li>
+							<li>
+								<h5>Favorites</h5>
+								<h2>22</h2>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="myPosts">
+					<% @post.each do |post| %>
+						<ul>
+							<li>
+								<h6><%= post.title %></h6>
+								<p><%= post.content %></p>
+							</li>
+						</ul>
+					<% end %>
+				</div>
+			</div>			
 		<% else %> <!-- Logged in person looking at their own profile && they do NOT have a profile -->
+		  <div id="formProfile" class="form">	
 			<%= form_for 'new_profile', url: '/new_profile', html: { class:'newprofile', multipart: true } do |f| %>
 			  <%=f.label :"New Profile" %><br />
 			  <%=f.text_area :name, :placeholder => "Name" %>
 			  <%=f.text_area :email, :placeholder => "Email" %>
 			  <%=f.text_area :city, :placeholder => "City" %>
 			  <%= f.file_field :image %>
-		  	  <%=f.submit :"Post It" %><% end %>
+		  	  <%=f.submit :"Post It", :id => "postIt" %>
+		  	<% end %>
+		  </div>	
 		<% end %>
 	<% else %> 
 		<% if @person.profile != nil %>	<!-- Logged in NOT looking at their own profile && other person has profile --> 
-			<p><%= @person.profile.name %></p>
-			<p><%= @person.profile.email %></p>
-			<p><%= @person.profile.city %></p>
+			<div id="leftSide">
+			</div>
+
+			<div id="rightSide">
+				<div id="picSpot"><%= image_tag @profile.image.url(:medium) %></div>
+				<div id="nameWrap">
+					<div id="nameMe">
+						<h2><%= @person.profile.name.capitalize %></h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco.  
+						</p> 
+					</div>
+					<div id="medals">
+						<ul>
+							<li>
+								<h5>Posts</h5>
+								<h2>12</h2>
+							</li>
+							<li>
+								<h5>Friends</h5>
+								<h2>212</h2>
+							</li>
+							<li>
+								<h5>Followers</h5>
+								<h2>121</h2>
+							</li>
+							<li>
+								<h5>Favorites</h5>
+								<h2>22</h2>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="myPosts">
+					<% @post.each do |post| %>
+						<ul>
+							<li>
+								<h6><%= post.title %></h6>
+								<p><%= post.content %></p>
+							</li>
+						</ul>
+					<% end %>
+				</div>
+			</div>
 		<% else %> <!-- Logged in NOT looking at their own profile && other person does NOT have a profile -->
 			<p>No profile to be found here</p>
 		<% end %>	
 	<% end %>
+</body>
