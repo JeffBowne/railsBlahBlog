@@ -73,7 +73,7 @@
 		  </div>	
 		<% end %>
 	<% else %> 
-		<% if @person.profile != nil %>	<!-- Logged in NOT looking at their own profile && other person has profile --> 
+		<% if present_check(@profile) %>	<!-- Logged in NOT looking at their own profile && other person has profile --> 
 			<div id="leftSide">
 			</div>
 
@@ -81,7 +81,7 @@
 				<div id="picSpot"><%= image_tag @profile.image.url(:medium) %></div>
 				<div id="nameWrap">
 					<div id="nameMe">
-						<h2><%= @person.profile.name.capitalize %></h2>
+						<h2><%= present_check(@profile) ? @person.profile.name.capitalize : "Nameless" %></h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 						quis nostrud exercitation ullamco.  

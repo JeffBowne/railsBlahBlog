@@ -36,21 +36,13 @@
 				<% end %>
 		</div>
 
-
-
 		<div class='userlist'>
-		<div><strong>blah</strong>.BLAH.<strong>blog</strong>.<span>users :</span>
-		</div>
-			<ul>
-					<% @list.each do |user| %>
-				<li>
-					<form method="GET" action="<%= "/users/#{user.id}/profiles" %>">
-						<input type="submit" value="<%= user.username %>" />
-					</form>
-				</li>
-					<% end %>
-			<ul>
-		</div>
+			<% @list.each do |user| %>
+	            <p><%= name_link(user) %></p>
+	            <% end %>
+	    </div>
+
+		
 
 	</body>
 </html>

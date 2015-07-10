@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-
-
   def index
   end
 
@@ -12,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(params[:user])
+    @user = User.create(params[:user].permit(:username, :password))
     session[:user_id] = @user.id
     redirect_to '/'
   end
@@ -24,5 +22,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:username, :password_digest)
   end
 end
