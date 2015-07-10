@@ -33,11 +33,12 @@ body {
 	top: 0;
 	height: 53px;
 	z-index: -1;
+	/*border-radius: 0 0 0 10px;*/
 }
 
 .title {
 	position: absolute;
-	left: 52px;
+	left: 44px;
 	top: 0;
 	font-family: "Arial Narrow", sans-serif;
 	color: black;
@@ -136,7 +137,8 @@ body {
 	margin-top: 15px;
 	padding: 2px 2px 2px 10px;
 	border-top: solid tomato 2px; 
-	/*border-radius: 0 15px 0 0 ;*/
+	border-radius: 0 15px 0 0 ;
+	border-right: solid tomato 2px;
 }
 .posttitles a {
 	color: black;
@@ -151,6 +153,7 @@ body {
 	margin-top: 1px;
 	padding: 2px 2px 2px 20px;
 	font-size: 12px;
+	border-right: solid #F2F2F2 2px;
 }
 .postby span {
 	float: right;
@@ -166,7 +169,9 @@ body {
 	margin-top: 1px;
 	margin-bottom: 40px;
 	padding: 3px;
-	border-bottom: solid white 2px;
+	border-bottom: solid #F2F2F2 2px;
+	border-right: solid #F2F2F2 2px;
+
 }
 
 
@@ -288,6 +293,7 @@ body {
 .commentsection {
 	float: right;
 	margin-top: 150px;
+	margin-right: 10px;
 	width: 20%;
 	text-align: left;
 	border-top: solid black 2px;
@@ -317,13 +323,17 @@ body {
 
 .commentsection h2 {
 	margin-top: 50px;
-	border-top: solid black 2px;
+	border-top: solid grey 3px;
 
 }
 .commentsection p {
+	background-color: #E6E6E6;
 	font-size: 10px;
-	border-top: solid black 2px;
+	border-top: solid tomato 3px;
 	border-bottom: solid black 1px;
+	border-left: solid black 1px;
+	border-radius: 0 0 0 10px;
+	padding-left: 5px;
 }
 
 
