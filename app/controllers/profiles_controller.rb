@@ -1,8 +1,10 @@
 class ProfilesController < ApplicationController
   def index
     @other = params[:user_id]
-    @user = User.find(session[:user_id])
+    @user2 = User.find(session[:user_id]) 
+    @user = User.find(params[:format])
     @person = User.find_by(id: params[:format])
+    @person2 = User.find_by(id: params[:user_id])
     if @post.present?
       @post = @person.posts
     else
