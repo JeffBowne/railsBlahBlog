@@ -31,24 +31,19 @@
 
 				<% @post.reverse.each do |x| %>
 			<div class='posttitles'><%= link_to x.title, x %></div>
-			<div class='postby'>by: <%=  User.find_by(id: x.user_id).username%><span><%= x.created_at %></span></div>
+			<div class='postby'>by: <%=  User.find_by(id: x.user_id) %><span><%= x.created_at %></span></div>
 			<p class='postprev'><%= truncate(x.content, length: 400, omission: '... (continued)') %></p>
 				<% end %>
 		</div>
 
-
-
 		<div class='userlist'>
-		<div><strong>blah</strong>.BLAH.<strong>blog</strong>.<span>users :</span>
-		</div>
-					<% @list.each do |user| %>
-							<form method="GET" action="<%= "/users/#{user.id}/profiles" %>">
-								<input type="submit" value="<%= user.username %>" />
-							</form>
 
-
-				
-					<% end %>
+			<div>
+				<strong>blah</strong>.BLAH.<strong>blog</strong>.<span>users :</span>
+				<% @list.each do |user| %>
+		            <p><%= name_link(user) %></p>
+		            <% end %>
+		    </div>
 		</div>
 
 	</body>
