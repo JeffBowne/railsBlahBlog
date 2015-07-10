@@ -9,6 +9,7 @@ class HomeController < ApplicationController
       @user = "Not logged in"
     end
 
+
     @post =  Post.all
     @list = User.all
     @myprofile = session[:user_id]

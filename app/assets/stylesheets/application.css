@@ -33,7 +33,7 @@ body {
 
 .title {
 	position: absolute;
-	left: 55px;
+	left: 52px;
 	top: 0;
 	font-family: "Arial Narrow", sans-serif;
 	color: black;
@@ -42,7 +42,6 @@ body {
 }
 .title:hover {
     text-shadow: 0px 0px 10px white;
-
 }
 
 .corner {
@@ -132,7 +131,7 @@ body {
 	margin-bottom: 0px;
 	margin-top: 15px;
 	padding: 2px 2px 2px 10px;
-	border-top: solid black 2px; 
+	border-top: solid tomato 2px; 
 	/*border-radius: 0 15px 0 0 ;*/
 }
 .posttitles a {
@@ -264,9 +263,12 @@ body {
 
 .showtitle {
 	margin: 20px 0 -6px 0;
+	padding-left: 1px;
+	padding-top: 1px;
+	font-size: 2em;
 }
 .showby {
-		border-top: solid grey 4px;
+	border-top: solid grey 4px;
 	text-align: right;
 	padding-left: 40px;
 	margin: 0;
@@ -306,7 +308,8 @@ body {
 	text-align: center;
 	margin: 5px 5px 5px 5px;
 	padding: 5px;
-	text-decoration: none;}
+	text-decoration: none;
+}
 
 .commentsection h2 {
 	margin-top: 50px;
@@ -315,21 +318,55 @@ body {
 }
 .commentsection p {
 	font-size: 10px;
-
+	border-top: solid black 2px;
+	border-bottom: solid black 1px;
 }
 
 
 
+.newpost {
+}
+.newpost label {
+}
+.newpost input:nth-child(odd) {
+		font-family: "Helvetica", sans-serif;
 
-
-
-
-
-
-
-
-
-
+	width: 100%;
+	font-size: 2em;
+	font-weight: bold;
+	margin: 20px 0 0px 0;
+	border: 0px;
+	background-color: rgba(230,230,230, 0.0);
+}
+.newby {
+	border-top: solid grey 4px;
+	text-align: right;
+	padding-left: 40px;
+	margin: -7px 0 0 0;
+}
+.newpost textarea {
+	resize: none;
+	margin: 21px 5px 0 5px;
+	width: 97%;
+	height: 300px;
+	font-family: "Times New Roman", serif;
+	font-size: 1em;
+	background-color: #F2F2F2;
+	border: solid black 1px;
+	border-radius: 0 10px 0 10px;
+}
+.newpost input:nth-child(even) {
+	float: right;
+	background-color: #F2F2F2;
+	border: solid black 4px;
+	border-radius: 0 10px 0 10px;
+	width: 100px;
+	color: black;
+	text-align: center;
+	margin: 5px 10px 5px 5px;
+	padding: 5px;
+	text-decoration: none;
+}
 
 
 

@@ -16,9 +16,21 @@ class PostsController < ApplicationController
     @author = @post.user_id
     @postby = User.find_by(id: @author).username
     @myprofile = session[:user_id]
+
+
+
   end
 
   def new
+    if session[:user_id] != nil
+      @user = User.find_by(id: session[:user_id]).username
+    else 
+      @user = "Not logged in"
+    end
+
+    @sessionid = session[:user_id]
+    @myprofile = session[:user_id]
+
     @post = Post.new
   end
 
@@ -26,7 +38,7 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post])
     @post.user_id = session[:user_id]
     @post.save
-    redirect_to '/'
+    redirect_to post_path(@post.id)
   end
 
   def edit
