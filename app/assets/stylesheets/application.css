@@ -383,6 +383,51 @@ body {
 }
 
 
+.editpost {
+}
+.editpost label {
+}
+.editpost input:nth-child(even) {
+		font-family: "Helvetica", sans-serif;
+
+	width: 100%;
+	font-size: 2em;
+	font-weight: bold;
+	margin: 20px 0 0px 0;
+	border: 0px;
+	background-color: rgba(230,230,230, 0.0);
+}
+.editby {
+	border-top: solid grey 4px;
+	text-align: right;
+	padding-left: 40px;
+	margin: -7px 0 0 0;
+}
+.editpost textarea {
+	resize: none;
+	margin: 21px 5px 0 5px;
+	width: 97%;
+	height: 300px;
+	font-family: "Times New Roman", serif;
+	font-size: 1em;
+	background-color: #F2F2F2;
+	border: solid black 1px;
+	border-radius: 0 10px 0 10px;
+}
+.editpost input:nth-child(odd) {
+	float: right;
+	background-color: #F2F2F2;
+	border: solid black 4px;
+	border-radius: 0 10px 0 10px;
+	width: 100px;
+	color: black;
+	text-align: center;
+	margin: 5px 10px 5px 5px;
+	padding: 5px;
+	text-decoration: none;
+}
+
+
 
 
 

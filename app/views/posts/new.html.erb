@@ -1,50 +1,29 @@
+<body>
+	<div class="topbar"></div>
+	<a href="/"><div class="title"><strong>blah</strong>.BLAH.<strong>blog</strong></div></a>
 
-
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>HOME</title>
-		<!-- <link rel="stylesheet" type="text/css" href=".css"> -->
-		<!-- // <script src='http://code.jquery.com/jquery-2.1.4.js'></script> -->
-		<!-- // <script src='.js'></script> -->
-		<meta charset="UTF-8">
-	</head>
-	<body>
-		<div class="topbar"></div>
-		<a href="/"><div class="title"><strong>blah</strong>.BLAH.<strong>blog</strong></div></a>
-
-			<div class='corner'>
-					<% if @user != "Not logged in" %>
-				<%= link_to @user, "/users/#{@myprofile}/profiles", class: 'boxes' %>
-				<%= link_to "Log Out", '/logout', class: 'boxes' %>
-					<% else %>
-				<%= link_to "Sign Up", new_user_path, class: 'boxes' %>
-				<%= link_to "Log In", '/login', class: 'boxes' %>
-					<% end %>
-			</div>
-		
-			<% if @sessionid == @author %>
-			<%= link_to "Edit this Post", edit_post_path, class: 'editbutton' %>
-			<%= link_to "Delete this Post", @post, :method => :delete, class: 'deletebutton' %>
-			<% end %>
-
-
-		<div class='contentbox'>
-
-			<%= form_for @post, html: { class:'newpost' } do |f| %>
-			  <%=f.text_field :title, :placeholder => "Title" %> <br>
-			<p class="newby">by: <%= @user %></p>
-			  <%=f.text_area :content, :placeholder => "Content" %> <br>
-			  <%=f.submit :"Post It" %>
-			<% end %>
-
+		<div class='corner'>
+				<% if @user != "Not logged in" %>
+			<%= link_to @user, "/users/#{@myprofile}/profiles", class: 'boxes' %>
+			<%= link_to "Log Out", '/logout', class: 'boxes' %>
+				<% else %>
+			<%= link_to "Sign Up", new_user_path, class: 'boxes' %>
+			<%= link_to "Log In", '/login', class: 'boxes' %>
+				<% end %>
 		</div>
 	
-		<div class='commentsection'>
-		</div>
 
+	<div class='contentbox'>
 
-	</body>
-</html>
+		<%= form_for @post, html: { class:'newpost' } do |f| %>
+		<%=f.text_field :title, :placeholder => "Title" %> <br>
+		<p class="newby">by: <%= @user %></p>
+		<%=f.text_area :content, :placeholder => "Content" %> <br>
+		<%=f.submit :"Post It" %>
+		<% end %>
 
+	</div>
 
+	<div class='commentsection'>
+	</div>
+</body>

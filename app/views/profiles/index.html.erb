@@ -21,7 +21,7 @@
 					<div id="nameMe">
 						<h2><%= which_person(@person) ? @person.profile.name : @person2.profile.name %></h2>
 						<p>
-							Lorem <%= which_person(@person) ? @person.profile.email : @person2.profile.email  %>
+							THIS IS ME <%= which_person(@person) ? @person.profile.email : @person2.profile.email  %>
 						</p> 
 						<p>
 							<%= which_person(@person) ? @person.profile.city : @person2.profile.city  %>
@@ -43,10 +43,5 @@
 						</ul>
 					<% end %>
 				</div>
-			</div>			
-		
-
-
-
-
+			</div>
 </body>

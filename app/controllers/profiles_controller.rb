@@ -14,6 +14,21 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    if session[:user_id] != nil
+      @user = User.find_by(id: session[:user_id])
+    else 
+      @user = "Not logged in"
+    end
+
+    @person = User.find_by(id: params[:format])
+    @person2 = User.find_by(id: params[:user_id])
+    if @post.present?
+      @post = @person.posts
+    else
+      @post = []
+    end
+    @profile = Profile.find_by(params[:id])
+
  #   @thisGuy = User.find_by(username: params[:username])
  #   @profile = Profile.find_by(params[:id])
    # @user = @profile.user
