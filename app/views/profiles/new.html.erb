@@ -1,10 +1,16 @@
 <h1>Profiles#new</h1>
 
 
-<%= form_for @user.profiles, html: { class:'newprofile' } do |f| %>
-  <%=f.label :"New Profile" %>
-  <%=f.text_field :name, :placeholder => "Name" %>
-  <%=f.text_field :email, :placeholder => "Email" %>
-  <%=f.text_field :city, :placeholder => "City" %>
-  <%=f.submit :"Profile Me" %>
-<% end %>
+
+	<div id="formProfile" class="form">	
+		<%= form_for 'new_profile', html: { class:'newprofile', multipart: true } do |f| %>
+		  <%=f.label :"New Profile" %>
+		  <%=f.text_field :name, :placeholder => "Name" %>
+		  <%=f.text_field :email, :placeholder => "Email" %>
+		  <%=f.text_field :city, :placeholder => "City" %>
+		  <%=f.submit :"Profile Me" %>
+		<% end %>
+	</div>	
+
+
+	 <!--, multipart: true  -->

@@ -3,8 +3,8 @@ require 'bcrypt'
 class HomeController < ApplicationController
   
   def index
-    if session[:user_id] != nil
-      @user = User.find_by(id: session[:user_id]).username
+      if session[:user_id] != nil
+      @user = User.find_by(id: session[:user_id])
     else 
       @user = "Not logged in"
     end

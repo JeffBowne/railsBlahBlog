@@ -12,16 +12,41 @@
 		<% end %>
 	</div>
 
-<div id="formProfile" class="form">	
-			<%= form_for 'new_profile', url: '/new_profile', html: { class:'newprofile', multipart: true } do |f| %>
-			  <%=f.label :"New Profile" %><br />
-			  <%=f.text_area :name, :placeholder => "Name" %>
-			  <%=f.text_area :email, :placeholder => "Email" %>
-			  <%=f.text_area :city, :placeholder => "City" %>
-			  <%= f.file_field :image %>
-		  	  <%=f.submit :"Post It", :id => "postIt" %>
-		  	<% end %>
-		  </div>	
-	
-	
+			<div id="leftSide">
+			</div>
+
+			<div id="rightSide">
+				<div id="picSpot"><%= image_tag @profile.image.url(:medium) %></div>
+				<div id="nameWrap">
+					<div id="nameMe">
+						<h2><%= which_person(@person) ? @person.profile.name : @person2.profile.name %></h2>
+						<p>
+							Lorem <%= which_person(@person) ? @person.profile.email : @person2.profile.email  %>
+						</p> 
+						<p>
+							<%= which_person(@person) ? @person.profile.city : @person2.profile.city  %>
+						</p>
+					</div>
+				</div>
+
+				<div>
+				 
+				</div>
+
+				<div id="myPosts">
+					<% @post.each do |post| %>
+						<ul>
+							<li>
+								<h6><%= post.title %></h6>
+								<p><%= post.content %></p>
+							</li>
+						</ul>
+					<% end %>
+				</div>
+			</div>			
+		
+
+
+
+
 </body>
