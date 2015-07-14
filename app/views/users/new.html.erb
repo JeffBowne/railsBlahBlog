@@ -6,5 +6,15 @@
   <%=f.label :"Create a User" %>
   <%=f.text_field :username, :placeholder => "Username" %>
   <%=f.password_field :password, :placeholder => "Password" %>
+  <%=f.password_field :password_confirmation, :placeholder => "Confirm Password" %>
   <%=f.submit :"Sing Up" %>
+<% end %>
+
+
+<% if !@user.nil? && @user.errors.full_messages.any? %>
+  <ul>
+    <% @user.errors.full_messages.each do |error_message| %>
+      <li><%= error_message%></li> <br />
+    <% end %>
+  </ul>
 <% end %>

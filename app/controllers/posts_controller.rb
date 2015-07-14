@@ -35,7 +35,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(post_params)
     @post.user_id = session[:user_id]
     @post.save
     redirect_to post_path(@post.id)
@@ -47,7 +47,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update_attributes(params[:post])
+    @post.update_attributes(post_params)
     redirect_to '/'
   end
 

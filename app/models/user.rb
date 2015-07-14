@@ -4,4 +4,10 @@ class User < ActiveRecord::Base
   has_one :profile
   has_many :posts
   has_many :comments
+
+  validates :username, presence: true
+  validates :username, uniqueness: true
+  validates :username, length: {minimum: 4, maximum: 14}
+
+  validates :password, confirmation: true, presence: true
 end
