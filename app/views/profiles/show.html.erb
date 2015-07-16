@@ -4,47 +4,49 @@
 			<a href="/"><div class="title"><strong>blah</strong>.BLAH.<strong>blog</strong></div></a>
 
 	<div class='corner'>
-		<% if @user != "Not logged in" %>
-			<%= link_to @user.username, '/profile.#{@myprofile}' , class: 'boxes' %> <!-- "/users/#{@myprofile}/profiles" -->
-			<%= link_to "Log Out", '/logout', class: 'boxes' %>
-		<% else %>
-			<%= link_to "Sign Up", new_user_path, class: 'boxes' %>
-			<%= link_to "Log In", '/login', class: 'boxes' %>
-		<% end %>
+			<% if @user != "Not logged in" %>
+		<%= link_to @user.username, "/users/#{@user.id}/profiles", class: 'boxes' %>
+		<%= link_to "Log Out", '/logout', class: 'boxes' %>
+			<% else %>
+		<%= link_to "Sign Up", new_user_path, class: 'boxes' %>
+		<%= link_to "Log In", '/login', class: 'boxes' %>
+			<% end %>
 	</div>
 
-			<div id="leftSide">
-
+	<div class="contentbox">
+	
+		<div class='profile'>
+			<div class="picspot">
+				<%= image_tag @profile.image.url(:medium) %>
 			</div>
+					
+			<div class="profileinfo">
+				<h1>My name is:</h1>
+				<p>
+					<%= @otherperson.profile.name %>
+				</p>
+				<h1>My email is:</h1>
+				<p>
+					<%= @otherperson.profile.email %>
+				</p>
+				<h1>I live in:</h1>
+				<p>
+					<%= @otherperson.profile.city %>
+				</p>
+			</div>
+			
+		</div>
 
-			<div id="rightSide">
-				<div id="picSpot"><%= image_tag @profile.image.url(:medium) %></div>
-				<div id="nameWrap">
-					<div id="nameMe">
-						<h2><%= which_person(@person) ? @person.profile.name : @person2.profile.name %></h2>
-						<p>
-							other person <%= which_person(@person) ? @person.profile.email : @person2.profile.email  %>
-						</p> 
-						<p>
-							<%= which_person(@person) ? @person.profile.city : @person2.profile.city  %>
-						</p>
-					</div>
-				</div>
-
-				<div>
-				 
-				</div>
-
-				<div id="myPosts">
-					<% @post.each do |post| %>
-						<ul>
-							<li>
-								<h6><%= post.title %></h6>
-								<p><%= post.content %></p>
-							</li>
-						</ul>
-					<% end %>
-				</div>
-			</div>			
+		<div class="myPosts">
+			<% @otherspost.each do |post| %>
+				<ul>
+					<li>
+						<h6><%= post.title %></h6>
+						<p><%= post.content %></p>
+					</li>
+				</ul>
+			<% end %>
+		</div>
+	</div>			
 		
 </body>
