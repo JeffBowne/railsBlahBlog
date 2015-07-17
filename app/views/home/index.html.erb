@@ -1,49 +1,26 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>HOME</title>
-		<!-- <link rel="stylesheet" type="text/css" href=".css"> -->
-		<!-- // <script src='http://code.jquery.com/jquery-2.1.4.js'></script> -->
-		<!-- // <script src='.js'></script> -->
-		<meta charset="UTF-8">
-	</head>
-	<body>
-		<div class="topbar"></div>
-		<a href="/"><div class="title"><strong>blah</strong>.BLAH.<strong>blog</strong></div></a>
+<body>
+		<% if current_user != nil %>
+	<%= link_to "POST YOUR BLOG", new_post_path, class: 'makebutton' %>
+		<% end %>
 
-			<div class='corner'>
-					<% if @user != "Not logged in" %>
-				<%= link_to @user.username, "/users/#{@user.id}/profiles", class: 'boxes' %>
-				<%= link_to "Log Out", '/logout', class: 'boxes' %>
-					<% else %>
-				<%= link_to "Sign Up", new_user_path, class: 'boxes' %>
-				<%= link_to "Log In", '/login', class: 'boxes' %>
-					<% end %>
-			</div>
 
-			<% if @user != "Not logged in" %>
-		<%= link_to "POST YOUR BLOG", new_post_path, class: 'makebutton' %>
+	<div class='contentbox'>	
+
+			<% @post.reverse.each do |x| %>
+		<div class='posttitles'><%= link_to x.title, x %></div>
+		<div class='postby'>by: <%=  User.find_by(id: x.user_id).username %><span><%= x.created_at %></span></div>
+		<p class='postprev'><%= truncate(x.content, length: 400, omission: '... (continued)') %></p>
 			<% end %>
+	</div>
 
+	<div class='userlist'>
 
-		<div class='contentbox'>	
+		<div>
+			<strong>blah</strong>.BLAH.<strong>blog</strong>.<span>users :</span>
+<% @list.each do |user| %>
+				<a href="/users/<%=user.id %>/profiles/<%= user.profile.id %>"><%= user.username %></a>
+					<% end %>
+	    </div>
+	</div>
 
-				<% @post.reverse.each do |x| %>
-			<div class='posttitles'><%= link_to x.title, x %></div>
-			<div class='postby'>by: <%=  User.find_by(id: x.user_id).username %><span><%= x.created_at %></span></div>
-			<p class='postprev'><%= truncate(x.content, length: 400, omission: '... (continued)') %></p>
-				<% end %>
-		</div>
-
-		<div class='userlist'>
-
-			<div>
-				<strong>blah</strong>.BLAH.<strong>blog</strong>.<span>users :</span>
-	<% @list.each do |user| %>
-					<a href="/users/<%=user.id %>/profiles/<%= user.profile.id %>"><%= user.username %></a>
-						<% end %>
-		    </div>
-		</div>
-
-	</body>
-</html>
+</body>

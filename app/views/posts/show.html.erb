@@ -1,43 +1,29 @@
-<body>
-	<div class="topbar"></div>
-	<a href="/"><div class="title"><strong>blah</strong>.BLAH.<strong>blog</strong></div></a>
-
-		<div class='corner'>
-				<% if @user != "Not logged in" %>
-			<%= link_to @user, "/users/#{@myprofile}/profiles", class: 'boxes' %>
-			<%= link_to "Log Out", '/logout', class: 'boxes' %>
-				<% else %>
-			<%= link_to "Sign Up", new_user_path, class: 'boxes' %>
-			<%= link_to "Log In", '/login', class: 'boxes' %>
-				<% end %>
-		</div>
-	
+<body>	
 		<% if @sessionid == @author %>
-		<%= link_to "Edit this Post", edit_post_path, class: 'editbutton' %>
-		<%= link_to "Delete this Post", @post, :method => :delete, class: 'deletebutton' %>
+	<%= link_to "Edit this Post", edit_post_path, class: 'editbutton' %>
+	<%= link_to "Delete this Post", @post, :method => :delete, class: 'deletebutton' %>
 		<% end %>
 
-
 	<div class='contentbox'>
-
 		<h1 class='showtitle'><%= @post.title %></h1>
 		<p class="showby">by: <%= @postby %></p>
 		<p class='showcontent'><%= @post.content %></p>
-
-		
 	</div>
 
 	<div class='commentsection'>
-		<%= form_for ([@post, @post.comments.build]), html: { class:'newcomment' } do |f| %>
-		  <%=f.label :"Care to Comment?" %><br />
-		  <%=f.text_area :content, :placeholder => "Type Here..." %><br>
-		  <%=f.submit :"Comment" %>
-		<% end %>
+			<%= form_for ([@post, @post.comments.build]), html: { class:'newcomment' } do |f| %>
+		<%=f.label :"Care to Comment?" %><br />
+		<%=f.text_area :content, :placeholder => "Go ahead..." %><br>
+		<%=f.submit :"Comment" %>
+			<% end %>
 
 		<h2>Comments</h2>
 
-		<% @post.comments.reverse[1..(@post.comments.length)].each do |x| %>	
-		<p><%= User.find_by(id: x.user_id).username %>-<br><%= x.content %></p>
-		<% end %>
+			<% @post.comments.reverse[1..(@post.comments.length)].each do |x| %>	
+		<div class='com'>
+			<div class='comuser'><%= x.user.username %>-</div>
+			<div class='comcontent'><%= x.content %></div>
+		</div>
+			<% end %>
 	</div>
 </body>
