@@ -2,12 +2,13 @@
 
 
 
-	<div id="formProfile" class="form">	
-		<%= form_for 'new_profile', html: { class:'newprofile', multipart: true } do |f| %>
+	<div class="profileform">	
+		<%= form_for 'profile', html: { class:'newprofile', multipart: true } do |f| %>
 		  <%=f.label :"New Profile" %>
 		  <%=f.text_field :name, :placeholder => "Name" %>
 		  <%=f.text_field :email, :placeholder => "Email" %>
 		  <%=f.text_field :city, :placeholder => "City" %>
+		  <%= f.file_field :image %>
 		  <%=f.submit :"Profile Me" %>
 		<% end %>
 	</div>	
