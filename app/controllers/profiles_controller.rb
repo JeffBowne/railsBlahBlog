@@ -38,9 +38,9 @@ class ProfilesController < ApplicationController
 
   def update
     @profile = Profile.find(params[:id])
-    @profile.update params[profile_params]
-    redirect_to edit_user_profile_path
-    
+    @profile.update profile_params
+    redirect_to user_profiles_path
+
     # @profile.update_attributes(profile_params)
     # redirect_to user_profile_path(current_user, @profile.id)
     

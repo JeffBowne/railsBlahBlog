@@ -3,7 +3,7 @@
 
 
 	<div class="profileform">	
-		<%= form_for @profile, url: user_profile_path(@profile.id, current_user), html: { multipart: true, method: :patch } do |f| %>
+		<%= form_for @profile, url: user_profile_path(current_user, @profile.id), html: { multipart: true, method: :patch } do |f| %>
 		<%=f.label :"Edit Profile" %>
 		<%=f.text_field :name, :placeholder => "Name" %>
 		<%=f.text_field :email, :placeholder => "Email" %>
