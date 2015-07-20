@@ -38,8 +38,11 @@ class ProfilesController < ApplicationController
 
   def update
     @profile = Profile.find(params[:id])
-    @profile.update_attributes(profile_params)
-    redirect_to user_profile_path(current_user, @profile.id)
+    @profile.update params[profile_params]
+    redirect_to edit_user_profile_path
+    
+    # @profile.update_attributes(profile_params)
+    # redirect_to user_profile_path(current_user, @profile.id)
     
     # @profile = Profile.new(profile_params)
     # @profile.user_id = session[:user_id]
