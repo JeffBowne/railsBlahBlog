@@ -8,7 +8,11 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @sessionid = session[:user_id]
     @author = @post.user_id
-    @postby = User.find_by(id: @author).username
+    if User.find_by(id: @author) != nil
+      @postby = User.find_by(id: @author).username 
+    else 
+      @postby = "<em style='color:grey;'>anonymous</em>".html_safe
+    end
     @myprofile = session[:user_id]
   end
 
@@ -36,7 +40,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update_attributes(post_params)
-    redirect_to '/'
+    redirect_to post_path(@post.id)
   end
 
 

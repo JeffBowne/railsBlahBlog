@@ -42,6 +42,10 @@ get '/profile' => 'profiles#index'
 get '/new_profile' => 'profiles#new'
 post '/new_profile' => 'profiles#create'
 # put "/profile" => 'profiles#update'
+get '/deletecheck' => 'home#deletecheck'
+post '/deleteself' => 'home#deleteself'
+post '/deleteall' => 'home#deleteall'
+
 
   resources :users do 
     resources :profiles

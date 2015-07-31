@@ -11,7 +11,7 @@
 	</div>
 
 	<div class='commentsection'>
-			<%= form_for ([@post, @post.comments.build]), html: { class:'newcomment' } do |f| %>
+			<%= form_for :comment, url: "/posts/#{@post.id}/comments", html: { class:'newcomment' } do |f| %>
 		<%=f.label :"Care to Comment?" %><br />
 		<%=f.text_area :content, :placeholder => "Go ahead..." %><br>
 		<%=f.submit :"Comment" %>
@@ -19,9 +19,14 @@
 
 		<h2>Comments</h2>
 
-			<% @post.comments.reverse[1..(@post.comments.length)].each do |x| %>	
+			<% @post.comments.each do |x| %>	
+				<% if x.user 
+				 	comby = x.user.username
+				 else 
+				 	comby = "<em style='color:grey;'>anonymous</em>".html_safe
+				 end %>
 		<div class='com'>
-			<div class='comuser'><%= x.user.username %>-</div>
+			<div class='comuser'><%= comby %>-</div>
 			<div class='comcontent'><%= x.content %></div>
 		</div>
 			<% end %>

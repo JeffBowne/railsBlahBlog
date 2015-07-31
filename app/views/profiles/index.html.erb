@@ -1,7 +1,7 @@
 
 <body>
 	<%= link_to "Edit", "/users/#{@me.id}/profiles/#{@profile.id}/edit", class: 'editbutton' %>
-	<%= link_to "Delete", @profile, :method => :delete, class: 'deletebutton' %>
+	<%= link_to "Delete", '/deletecheck', class: 'deletebutton' %>
 
 	<div class="contentbox">
 		<div class='profile'>

@@ -6,11 +6,16 @@
 
 	<div class='contentbox'>	
 
-			<% @post.reverse.each do |x| %>
+		<% @post.reverse.each do |x| %>
+			<% if x.user 
+			 	postby = User.find_by(id: x.user_id).username
+			 else 
+			 	postby = "<em style='color:grey;'>anonymous</em>".html_safe
+			 end %>
 		<div class='posttitles'><%= link_to x.title, x %></div>
-		<div class='postby'>by: <%=  User.find_by(id: x.user_id).username %><span><%= x.created_at %></span></div>
+		<div class='postby'>by: <%= postby %><span><%= x.created_at %></span></div>
 		<p class='postprev'><%= truncate(x.content, length: 230, omission: '... (continued)') %></p>
-			<% end %>
+		<% end %>
 	</div>
 
 	<div class='userlist'>

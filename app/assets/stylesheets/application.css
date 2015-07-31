@@ -321,6 +321,13 @@ body {
 	height: 100px;
 	background-color: #E7E7E7;
 	border-radius: 0 10px 0 10px;
+	transition-duration: .3s;
+}
+	.commentsection textarea:focus {
+	outline: none;
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 0 4px #75B391;
 }
 
 .commentsection input {
@@ -334,6 +341,13 @@ body {
 	margin: 5px 5px 5px 5px;
 	padding: 5px;
 	text-decoration: none;
+	transition-duration: .3s;
+}
+	.commentsection input:hover {
+	outline: none;
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 0 4px #75B391;
 }
 
 .commentsection h2 {
@@ -516,6 +530,242 @@ body {
 .myPosts ul li p {
 	padding: 0px 0px 5px 5px;
 }
+
+
+.dpbuttons {
+
+}
+
+/*
+.signup label {
+	font-family: "Helvetica", sans-serif;
+	width: 100%;
+	font-size: 2em;
+	font-weight: bold;
+	margin: 20px 0 0px 0;
+	border: 0px;
+	background-color: rgba(230,230,230, 0.0);
+}
+
+.signup input {
+	display: block;
+	margin: 21px 5px 0 5px;
+	padding-left: 5px;
+	width: 200px;
+	font-family: "Times New Roman", serif;
+	font-size: 1em;
+	background-color: #DAD6E7;
+	border: solid black 1px;
+	border-radius: 0 10px 0 10px;
+}
+.signup input[type="Submit"] {
+	font-family: "Helvetica", sans-serif;
+	background-color: #E7E7E7;
+	border: solid #666666 4px;
+	border-radius: 0 10px 0 10px;
+	width: 118px;
+	color: black;
+	text-align: center;
+	margin: 20px 5px 5px 5px;
+	padding: 5px;
+	text-decoration: none;
+}
+*/
+
+.signup input[placeholder="Username"] {
+	z-index: -1;
+	position: absolute;
+	top: 70px;
+	right: 129px;
+	background-color: #E7E7E7;
+	border: solid black 4px;
+	border-radius: 0 0 0 10px;
+	width: 110px;
+	color: black;
+	text-align: center;
+	padding: 2px 0 2px 2px;
+	text-decoration: none;
+	transition-duration: .3s;
+}
+.signup input[placeholder="Username"]:focus {
+	background-color: white;
+	color: black;
+	outline: none;
+}
+
+.signup input[placeholder="Password"] {
+	z-index: -1;
+	position: absolute;
+	top: 70px;
+	right: 15px;
+	background-color: #E7E7E7;
+	border: solid black 4px;
+	border-radius: 0 0 0 0px;
+	width: 110px;
+	color: black;
+	text-align: center;
+	padding: 2px 0 2px 0;
+	text-decoration: none;
+	transition-duration: .3s;
+}
+.signup input[placeholder="Password"]:focus {
+	background-color: white;
+	color: black;
+	outline: none;
+}
+
+.signup input[placeholder="Confirm Password"] {
+	z-index: -2;
+	position: absolute;
+	top: 91px;
+	right: 15px;
+	background-color: #E7E7E7;
+	border: solid black 4px;
+	border-radius: 0 0 0 10px;
+	width: 110px;
+	color: black;
+	text-align: center;
+	padding: 2px 0 2px 0;
+	text-decoration: none;
+	transition-duration: .3s;
+}
+.signup input[placeholder="Confirm Password"]:focus {
+	background-color: white;
+	color: black;
+	outline: none;
+}
+
+.signup input[type="Submit"] {
+	z-index: -3;
+	position: absolute;
+	top: 112px;
+	right: 30px;
+	background-color: #E7E7E7;
+	border: solid black 4px;
+	border-radius: 0 0 0 10px;
+	width: 75px;
+	color: black;
+	text-align: center;
+	padding: 2px 0 2px 0;
+	text-decoration: none;
+	transition-duration: .3s;
+}
+.signup input[type="Submit"]:hover {
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 0 4px #75B391;
+}
+.signup input[type="Submit"]:focus {
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 0 4px #75B391;
+	outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.login input[placeholder="Username"] {
+	z-index: -1;
+	position: absolute;
+	top: 70px;
+	right: 129px;
+	background-color: #E7E7E7;
+	border: solid black 4px;
+	border-radius: 0 0 0 10px;
+	width: 110px;
+	color: black;
+	text-align: center;
+	padding: 2px 0 2px 2px;
+	text-decoration: none;
+	transition-duration: .3s;
+}
+.login input[placeholder="Username"]:focus {
+	background-color: white;
+	color: black;
+	outline: none;
+}
+
+.login input[placeholder="Password"] {
+	z-index: -1;
+	position: absolute;
+	top: 70px;
+	right: 15px;
+	background-color: #E7E7E7;
+	border: solid black 4px;
+	border-radius: 0 0 0 0px;
+	width: 110px;
+	color: black;
+	text-align: center;
+	padding: 2px 0 2px 0;
+	text-decoration: none;
+	transition-duration: .3s;
+}
+.login input[placeholder="Password"]:focus {
+	background-color: white;
+	color: black;
+	outline: none;
+}
+
+
+.login input[type="Submit"] {
+	z-index: -3;
+	position: absolute;
+	top: 91px;
+	right: 30px;
+	background-color: #E7E7E7;
+	border: solid black 4px;
+	border-radius: 0 0 0 10px;
+	width: 75px;
+	color: black;
+	text-align: center;
+	padding: 2px 0 2px 0;
+	text-decoration: none;
+	transition-duration: .3s;
+}
+.login input[type="Submit"]:hover {
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 0 4px #75B391;
+}
+.login input[type="Submit"]:focus {
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 0 4px #75B391;
+	outline: none;
+}
+
 
 
 

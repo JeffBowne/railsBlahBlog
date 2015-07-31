@@ -2,7 +2,6 @@ require 'bcrypt'
 
 class HomeController < ApplicationController
   def index
-
     @post =  Post.all
     @list = User.all
     @myprofile = session[:user_id]
@@ -10,7 +9,10 @@ class HomeController < ApplicationController
   end
 
   def login
-    @sample = ['Blue','Red','Yellow']
+    @post =  Post.all
+    @list = User.all
+    @myprofile = session[:user_id]
+    @person = User.find_by(id: params[:user_id])
   end
 
 
@@ -40,4 +42,39 @@ class HomeController < ApplicationController
     session.clear
     redirect_to '/'
   end
+
+  def deletecheck
+  end
+  
+  def deleteself
+    @user = User.where(id: session[:user_id]).first
+    @user.destroy
+
+    @profiles = Profile.where(user_id: session[:user_id]).first
+    @profiles.destroy
+
+    session.clear
+    redirect_to '/'
+  end
+
+  def deleteall 
+    @user = User.where(id: session[:user_id]).first
+    @user.destroy
+
+    @profiles = Profile.where(user_id: session[:user_id]).first
+    @profiles.destroy
+
+    @posts = Post.where(user_id: session[:user_id])
+    @posts.destroy_all
+
+    @comments = Comment.where(user_id: session[:user_id])
+    @comments.destroy_all
+
+    session.clear
+    redirect_to '/'
+  end
+
+
 end
+
+
