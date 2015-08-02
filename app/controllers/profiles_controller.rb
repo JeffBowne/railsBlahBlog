@@ -20,7 +20,12 @@ class ProfilesController < ApplicationController
 
 
   def new
-  @profile = Profile.new
+    @profile = Profile.new
+    
+    @post =  Post.all
+    @list = User.all
+    @myprofile = session[:user_id]
+    @person = User.find_by(id: params[:user_id])
   end
 
 

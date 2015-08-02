@@ -1,17 +1,43 @@
-<h1>Profiles#new</h1>
-
-
+<body>
 
 	<div class="profileform">	
 		<%= form_for 'profile', html: { class:'newprofile', multipart: true } do |f| %>
-		  <%=f.label :"New Profile" %>
-		  <%=f.text_field :name, :placeholder => "Name" %>
+		  <%=f.text_field :name, :placeholder => "Full Name" %>
 		  <%=f.text_field :email, :placeholder => "Email" %>
 		  <%=f.text_field :city, :placeholder => "City" %>
 		  <%= f.file_field :image %>
 		  <%=f.submit :"Profile Me" %>
 		<% end %>
 	</div>	
+
+	<div class='contentbox'>	
+
+		<% @post.reverse.each do |x| %>
+			<% if x.user 
+			 	postby = User.find_by(id: x.user_id).username
+			 else 
+			 	postby = "<em style='color:grey;'>anonymous</em>".html_safe
+			 end %>
+		<div class='posttitles'><%= link_to x.title, x %></div>
+		<div class='postby'>by: <%= postby %><span><%= x.created_at %></span></div>
+		<p class='postprev'><%= truncate(x.content, length: 230, omission: '... (continued)') %></p>
+		<% end %>
+	</div>
+
+	<div class='userlist'>
+
+		<div>
+			<strong>blah</strong>.BLAH.<strong>blog</strong>.<span>users :</span>
+					
+				<% @list.each do |user| %>
+			<a class='peeps' href="/users/<%=user.id %>/profiles/<%= user.profile.id if user.profile %>"><%= user.username %></a>
+				<% end %>
+	    </div>
+	</div>
+
+</body>
+
+
 
 
 	 <!--, multipart: true  -->

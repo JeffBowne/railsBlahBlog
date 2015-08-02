@@ -51,6 +51,7 @@ body {
     text-shadow: 0px 0px 10px white;
 }
 
+
 .corner {
 	position: absolute;
 	right: 0;
@@ -81,6 +82,12 @@ body {
 	color: black;
 	box-shadow: 0 0 0 4px #75B391;
 }
+.boxes:focus {
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 0 4px #75B391;
+	outline: none;
+}
 /*	   box-shadow: 0 0 0 4px #75B391, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);*/
 
 
@@ -107,7 +114,12 @@ body {
 	background-color: white;
 	color: black;
 	box-shadow: 0 0 0 4px #75B391;
-
+}
+.makebutton:focus {
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 0 4px #75B391;
+	outline: none;
 }
 .makebutton:visited {
 	color: black;
@@ -151,6 +163,10 @@ body {
 }
 .posttitles a:hover {
 	text-decoration: underline;
+}
+.posttitles a:focus {
+	text-decoratio: underline;
+	outline: none;
 }
 .postby {
 	background-color: rgba(222,222,222, .7);
@@ -214,7 +230,10 @@ body {
 	/*border-right: solid black 20px;*/
 /*	margin-right: -20px; */
 }
-
+.peeps:focus {
+	text-decoration: underline;
+	outline: none;
+}
 
 
 /*----------------------------------- Posts -----------------------------------*/
@@ -242,7 +261,12 @@ body {
 	background-color: white;
 	color: black;
 	box-shadow: 0 0 0 4px #75B391;
-
+}
+.editbutton:focus {
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 0 4px #75B391;
+	outline: none;
 }
 .editbutton:visited {
 	color: black;
@@ -268,12 +292,16 @@ body {
 	text-decoration: none;
 	transition-duration: .3s;
 }
-
 .deletebutton:hover {
 	background-color: white;
 	color: red;
 	box-shadow: 0 0 0 4px red;
-
+}
+.deletebutton:focus {
+	background-color: white;
+	color: red;
+	box-shadow: 0 0 0 4px red;
+	outline: none;
 }
 .deletebutton:visited {
 	color: black;
@@ -323,7 +351,7 @@ body {
 	border-radius: 0 10px 0 10px;
 	transition-duration: .3s;
 }
-	.commentsection textarea:focus {
+.commentsection textarea:focus {
 	outline: none;
 	background-color: white;
 	color: black;
@@ -343,11 +371,18 @@ body {
 	text-decoration: none;
 	transition-duration: .3s;
 }
-	.commentsection input:hover {
+.commentsection input:hover {
 	outline: none;
 	background-color: white;
 	color: black;
 	box-shadow: 0 0 0 4px #75B391;
+}
+.commentsection input:focus {
+	outline: none;
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 0 4px #75B391;
+	outline: none;
 }
 
 .commentsection h2 {
@@ -388,6 +423,9 @@ body {
 	border: 0px;
 	background-color: rgba(230,230,230, 0.0);
 }
+.newpost input:nth-child(odd):focus {
+	outline: none;
+}
 .newby {
 	border-top: solid grey 4px;
 	text-align: right;
@@ -404,6 +442,11 @@ body {
 	background-color: #DAD6E7;
 	border: solid black 1px;
 	border-radius: 0 10px 0 10px;
+	transition-duration: .3s;
+}
+.newpost textarea:focus {
+	background-color: white;
+	outline: none;
 }
 .newpost input:nth-child(even) {
 	float: right;
@@ -416,8 +459,18 @@ body {
 	margin: 5px 10px 5px 5px;
 	padding: 5px;
 	text-decoration: none;
+	transition-duration: .3s;
 }
-
+.newpost input:nth-child(even):hover {
+	background-color: white;
+	box-shadow: 0 0 0 4px #75B391;
+	outline: none;
+}
+.newpost input:nth-child(even):focus {
+	background-color: white;
+	box-shadow: 0 0 0 4px #75B391;
+	outline: none;
+}
 
 .editpost {
 }
@@ -765,6 +818,138 @@ body {
 	box-shadow: 0 0 0 4px #75B391;
 	outline: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.newprofile input[placeholder="Full Name"] {
+	z-index: -1;
+	position: absolute;
+	top: 70px;
+	right: 129px;
+	background-color: #E7E7E7;
+	border: solid black 4px;
+	border-radius: 0 0 0 10px;
+	width: 110px;
+	color: black;
+	text-align: center;
+	padding: 2px 0 2px 2px;
+	text-decoration: none;
+	transition-duration: .3s;
+}
+.newprofile input[placeholder="Full Name"]:focus {
+	background-color: white;
+	color: black;
+	outline: none;
+}
+
+.newprofile input[placeholder="Email"] {
+	z-index: -1;
+	position: absolute;
+	top: 70px;
+	right: 15px;
+	background-color: #E7E7E7;
+	border: solid black 4px;
+	border-radius: 0 0 0 0px;
+	width: 110px;
+	color: black;
+	text-align: center;
+	padding: 2px 0 2px 0;
+	text-decoration: none;
+	transition-duration: .3s;
+}
+.newprofile input[placeholder="Email"]:focus {
+	background-color: white;
+	color: black;
+	outline: none;
+}
+
+.newprofile input[placeholder="City"] {
+	z-index: -2;
+	position: absolute;
+	top: 91px;
+	right: 129px;
+	background-color: #E7E7E7;
+	border: solid black 4px;
+	border-radius: 0 0 0 10px;
+	width: 110px;
+	color: black;
+	text-align: center;
+	padding: 2px 0 2px 0;
+	text-decoration: none;
+	transition-duration: .3s;
+}
+.newprofile input[placeholder="City"]:focus {
+	background-color: white;
+	color: black;
+	outline: none;
+}
+
+.newprofile input[type="file"] {
+	z-index: -2;
+	position: absolute;
+	top: 91px;
+	right: 15px;
+	background-color: #E7E7E7;
+	border: solid black 4px;
+	border-radius: 0 0 0 10px;
+	width: 110px;
+	color: black;
+	text-align: center;
+	padding: 2px 0 2px 0;
+	text-decoration: none;
+	transition-duration: .3s;
+}
+.newprofile input[type="file"]:focus {
+	background-color: white;
+	color: black;
+	outline: none;
+}
+
+.newprofile input[type="Submit"] {
+	z-index: -3;
+	position: absolute;
+	top: 112px;
+	right: 30px;
+	background-color: #E7E7E7;
+	border: solid black 4px;
+	border-radius: 0 0 0 10px;
+	width: 75px;
+	color: black;
+	text-align: center;
+	padding: 2px 0 2px 0;
+	text-decoration: none;
+	transition-duration: .3s;
+}
+.newprofile input[type="Submit"]:hover {
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 0 4px #75B391;
+}
+.newprofile input[type="Submit"]:focus {
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 0 4px #75B391;
+	outline: none;
+}
+
 
 
 
